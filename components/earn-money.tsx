@@ -67,7 +67,7 @@ export default function EarnMoney() {
   return (
     <div className={`${MyOnestFont.className} p-6 text-white`}>
       <h2 className="text-center mb-4 text-xl font-semibold">
-        • Video de 7 minutos •
+        • Video de 7 minutos•
       </h2>
       <p className="text-center mb-4">
         Descubre una{" "}
