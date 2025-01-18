@@ -28,10 +28,11 @@ export default function Payment() {
                 style={{ layout: "vertical", color: "gold" }}
                 createOrder={(data, actions) => {
                   return actions.order.create({
+                    intent: "CAPTURE", // Agregado intent
                     purchase_units: [
                       {
                         amount: {
-                          currency_code: "USD", // Código de la moneda
+                          currency_code: "USD",
                           value: "25.99", // Monto a cobrar
                         },
                       },
