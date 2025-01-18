@@ -43,9 +43,8 @@ export default function Payment() {
                   // Verificación de si actions.order está definido
                   if (actions.order) {
                     return actions.order.capture().then((details) => {
-                      alert(
-                        "Transaction completed by " + details.payer?.name.given_name
-                      );
+                      const payerName = details.payer?.name?.given_name || "Desconocido";
+                      alert("Transaction completed by " + payerName);
                       // Lógica de éxito aquí
                     });
                   } else {
