@@ -44,13 +44,14 @@ export default function Payment() {
                   if (actions.order) {
                     return actions.order.capture().then((details) => {
                       alert(
-                        "Transaction completed by " + details.payer.name.given_name
+                        "Transaction completed by " + details.payer?.name.given_name
                       );
-                      // Maneja la lógica de éxito aquí
+                      // Lógica de éxito aquí
                     });
                   } else {
                     console.error("Order not defined");
-                    // Maneja el caso en que `actions.order` esté indefinido
+                    // Retorna un Promise rechazado si `actions.order` no está definido
+                    return Promise.reject("Order not found");
                   }
                 }}
               />
