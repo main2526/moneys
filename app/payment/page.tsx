@@ -15,8 +15,7 @@ export default function Payment() {
         <PayPalScriptProvider
           options={{
             clientId:
-              "AecLz0_OTn23pVPyAX8mTO85aMT8GddGMn-Ga0IFVoFG_p6rrGG6TJ35MNIl4kWPFk0tRNdpG7Qvd7Ef" ||
-              "",
+              "AecLz0_OTn23pVPyAX8mTO85aMT8GddGMn-Ga0IFVoFG_p6rrGG6TJ35MNIl4kWPFk0tRNdpG7Qvd7Ef",
           }}
         >
           <div className="flex justify-center items-center h-screen bg-gray-100">
