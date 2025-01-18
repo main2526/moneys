@@ -2,9 +2,8 @@
 import React from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
-import {Onest} from "next/font/google";
+import { Onest } from "next/font/google";
 import "./module.css";
-
 
 const Fonts = Onest({ subsets: ["latin"], weight: "400" });
 
@@ -19,15 +18,20 @@ export default function Payment() {
           }}
         >
           <div className="flex justify-center items-center h-screen bg-gray-100">
-            <div className="bg-white p-10  shadow-2xl rounded-lg   ">
-              <h2 className={ `${Fonts.className} text-2xl bold text-center font-semibold mb-4 shadow-sm`}>Realiza tu pago</h2>
+            <div className="bg-white p-10 shadow-2xl rounded-lg">
+              <h2
+                className={`${Fonts.className} text-2xl bold text-center font-semibold mb-4 shadow-sm`}
+              >
+                Realiza tu pago
+              </h2>
               <PayPalButtons
-                style={{ layout: "vertical",  color: "gold",  }}
+                style={{ layout: "vertical", color: "gold" }}
                 createOrder={(data, actions) => {
                   return actions.order.create({
                     purchase_units: [
                       {
                         amount: {
+                          currency_code: "USD", // Código de la moneda
                           value: "25.99", // Monto a cobrar
                         },
                       },
