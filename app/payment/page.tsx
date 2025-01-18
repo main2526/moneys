@@ -40,14 +40,18 @@ export default function Payment() {
                   });
                 }}
                 onApprove={(data, actions) => {
-                  return actions.order.capture().then((details) => {
-                    alert(
-                      "Transaction completed by " +
-                        details.payer.name.given_name
-                    );
-
-                    // Maneja la lógica de éxito aquí
-                  });
+                  // Verificación de si actions.order está definido
+                  if (actions.order) {
+                    return actions.order.capture().then((details) => {
+                      alert(
+                        "Transaction completed by " + details.payer.name.given_name
+                      );
+                      // Maneja la lógica de éxito aquí
+                    });
+                  } else {
+                    console.error("Order not defined");
+                    // Maneja el caso en que `actions.order` esté indefinido
+                  }
                 }}
               />
             </div>
